@@ -38,11 +38,11 @@ public class auto_am_DataRecord {
     }
 
     public String getPriceInUSD() {
-        return getFirstElementText(".offer-top-price .fnum");  // Assuming .fnum within price section
+        return getFirstElementText("#pricedown li:nth-child(1) span");  // Assuming .fnum within price section
     }
 
     public String getPriceInAMD() {
-        return getFirstElementText("#pricedown li:nth-child(2) span");  // Second item in dropdown for AMD
+        return getFirstElementText("#pricedown li:nth-child(3) span");  // Second item in dropdown for AMD
     }
 
     //ToDo: Getter for url, price_in_usd, price_in_amd, title, description using any of the getElements method 

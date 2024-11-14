@@ -1,5 +1,6 @@
-package com.ds_intelligence_arm.for_development; 
+package com.ds_intelligence_arm.for_tasks; 
 
+import com.ds_intelligence_arm.utils.SortingAlgorithms;
 import com.ds_intelligence_arm.storage.model.auto_am_DataRecord;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -10,7 +11,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataRecordCheck {
+public class DataRecordSorting {
 
     public static List<auto_am_DataRecord> readDataRecordsFromJson(String filePath) {
         List<auto_am_DataRecord> dataRecords = new ArrayList<>();
@@ -36,9 +37,16 @@ public class DataRecordCheck {
 
         // Read the data records from the JSON file
         List<auto_am_DataRecord> records = readDataRecordsFromJson(filePath);
+        auto_am_DataRecord[] records_array= records.toArray(new auto_am_DataRecord[0]);
 
-        // Print each record
-        for (auto_am_DataRecord record : records) {
+        // Use the bubble sorting algorithm defined in SortingAlgorithms to sort the record_array_based on price_in_AMD.
+
+        // Use the insertion sorting algorithm defined in SortingAlgorithms to sort the record_array_based on price_in_AMD.
+
+        // Use the selection sorting algorithm defined in SortingAlgorithms to sort the record_array_based on price_in_AMD.
+
+        // Print each record after sorting
+        for (auto_am_DataRecord record : records_array) {
             System.out.println("URL: " + record.getUrl());
             System.out.println("Title: " + record.getTitle());
             System.out.println("Description: " + record.getDescription());

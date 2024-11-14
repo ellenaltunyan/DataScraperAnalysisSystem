@@ -6,13 +6,5 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class DataStructures {
-    // Stack implementation example
-    public static Stack<Integer> createStack() {
-        return new Stack<>();
-    }
-
-    // Queue implementation example
-    public static Queue<Integer> createQueue() {
-        return new LinkedList<>();
-    }
+ /* Implement the SingleLinkedList, queue, stack which wil store the DataRecords. */
 }
