@@ -1,15 +1,16 @@
 package com.ds_intelligence_arm.for_tasks; 
 
-import com.ds_intelligence_arm.utils.SortingAlgorithms;
-import com.ds_intelligence_arm.storage.model.auto_am_DataRecord;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.ds_intelligence_arm.storage.model.auto_am_DataRecord;
+import com.ds_intelligence_arm.utils.SortingAlgorithms;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class DataRecordSorting {
 
@@ -47,12 +48,17 @@ public class DataRecordSorting {
 
         // Print each record after sorting
         for (auto_am_DataRecord record : records_array) {
+            double[] prices = SortingAlgorithms.checkAndAssignPrices(
+                record.getPriceInUSD(), 
+                record.getPriceInAMD()
+            );
+            
             System.out.println("URL: " + record.getUrl());
             System.out.println("Title: " + record.getTitle());
             System.out.println("Description: " + record.getDescription());
-            System.out.println("Price in USD: " + record.getPriceInUSD());
-            System.out.println("Price in AMD: " + record.getPriceInAMD());
-            System.out.println("-----");
+            System.out.println("Price in USD: $" + String.format("%.0f", prices[0]));
+            System.out.println("Price in AMD: ֏" + String.format("%.0f", prices[1]));
+            System.out.println("-----\n");
         }
     }
 }
